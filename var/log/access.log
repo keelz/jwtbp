@@ -1,0 +1,2 @@
+::1 - - [01/Mar/2018:18:11:45 +0000] "GET /api/auth/me HTTP/1.1" 200 215 "-" "PostmanRuntime/2.3.2"
+::1 - - [01/Mar/2018:18:11:46 +0000] "GET /api/auth/me HTTP/1.1" 200 215 "-" "PostmanRuntime/2.3.2"
