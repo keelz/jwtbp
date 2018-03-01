@@ -129,7 +129,7 @@ router.get('/me', VerifyToken, function(req, res) {
 /**
  * [HELPER]
  * token response factory.
- * @param {object} obj 
+ * @param {object} obj
  */
 function tokenResponse(obj) {
   // generate (sign) token with arguments object.

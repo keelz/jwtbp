@@ -5,9 +5,9 @@ const jwt       = require('jsonwebtoken')
  * parse token from request headers (x-access-token)
  * validate and verify token
  * respond with error message or continue
- * @param {Express$Request} req 
- * @param {Express$Response} res 
- * @param {function} next 
+ * @param {Express$Request} req
+ * @param {Express$Response} res
+ * @param {function} next
  */
 function verifyToken(req, res, next) {
   // parse toke from request headers.
