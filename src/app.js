@@ -8,7 +8,7 @@ const express         = require('express')
 
 const accessLogStream = fs.createWriteStream(config.ACCESS_LOG, { flags: 'a' })
 const app = express()
-const isProduction = process.env.NODE_ENV === 'development'
+const isProduction = process.env.NODE_ENV === 'production'
 const port = process.env.PORT || 3000
 
 false === !!isProduction && app.use(morgan('dev'))
