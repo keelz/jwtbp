@@ -1,9 +1,9 @@
-const express = require('express')
-    , AuthController = require('./auth')
-    , UsersController = require('./users')
+import express from 'express'
+import AuthController from './auth'
+import UsersController from './users'
 
 const router = express.Router()
 router.use('/auth', AuthController)
 router.use('/users', UsersController)
 
-module.exports = router
+export default router

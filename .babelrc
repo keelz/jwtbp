@@ -1,0 +1,21 @@
+{
+  "plugins": [
+    ["lodash", {"id": ["lodash"]}],
+    "dynamic-import-node",
+    [
+      "module-resolver",
+      {
+        "root": ["./"],
+        "alias": {
+          "routes": "./src/routes",
+          "common": "./src/common"
+        },
+        "extensions": [".js", ".json"]
+      }
+    ]
+  ],
+  "presets": [
+    ["env"],
+    "flow"
+  ]
+}

@@ -1,5 +1,5 @@
-const jwt       = require('jsonwebtoken')
-    , config    = require('../config')
+import jwt from 'jsonwebtoken'
+import constants from '../constants'
 
 /**
  * parse token from request headers (x-access-token)
@@ -23,7 +23,7 @@ function verifyToken(req, res, next) {
   }
 
   // verify token.
-  jwt.verify(token, config.secret, (err, decoded) => {
+  jwt.verify(token, constants.secret, (err, decoded) => {
     // handle verify error.
     if (err) {
       return res.status(500).json({

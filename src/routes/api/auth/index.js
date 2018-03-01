@@ -1,11 +1,11 @@
 // AuthController.js
-const express       = require('express')
-    , bcrypt        = require('bcryptjs')
-    , bodyParser    = require('body-parser')
-    , jwt           = require('jsonwebtoken')
-    , config        = require('../../../common/config')
-    , Users         = require('../../../model/Users')
-    , VerifyToken   = require('../../../common/middlewares/VerifyToken')
+import express from 'express'
+import bcrypt from 'bcryptjs'
+import bodyParser from 'body-parser'
+import jwt from 'jsonwebtoken'
+import constants from '../../../common/constants'
+import Users from '../../../model/Users'
+import VerifyToken from '../../../common/middlewares/VerifyToken'
 
 const router = express.Router()
 router.use(bodyParser.urlencoded({ extended: false }))
@@ -115,6 +115,7 @@ router.get('/me', VerifyToken, function(req, res) {
     // define response object.
     const response = tokenResponse({ id })
 
+
     // respond.
     res.status(200).json(response)
   }).catch(err => {
@@ -133,7 +134,7 @@ router.get('/me', VerifyToken, function(req, res) {
  */
 function tokenResponse(obj) {
   // generate (sign) token with arguments object.
-  const token = jwt.sign(obj, config.secret, {
+  const token = jwt.sign(obj, constants.secret, {
     expiresIn: 86400
   })
 
@@ -141,4 +142,4 @@ function tokenResponse(obj) {
   return Object.assign({}, obj, { token })
 }
 
-module.exports = router
+export default router
